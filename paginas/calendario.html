@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Fran Dona">
+        <title>L@s Flaquit@s - Calendario</title>
+        <link rel="stylesheet" type="text/css" href="csspaginas/calendariocss.css">
+        <link rel="icon" href="../Media/Logo_render.ico">
+    </head>
+    <body class="fondodepantalla">
+        <header>
+            <h1>Calendario</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="#">Calendario</a></li>
+                <li><a href="rutas.html">Rutas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+        <div class="calendario">
+            <table class="contenedor-de-tabla">
+                <tbody>
+                    <tr>
+                        <th colspan="7">Octubre</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">L</th>
+                        <th style="text-align: center;">M</th>
+                        <th style="text-align: center;">X</th>
+                        <th style="text-align: center;">J</th>
+                        <th style="text-align: center;">V</th>
+                        <th style="text-align: center;">S</th>
+                        <th style="text-align: center;">D</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;">&nbsp;</td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-1')">1</div></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-2')">2</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-3')">3</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-4')">4</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-5')">5</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-6')">6</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-7')">7</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-8')">8</div></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-9')">9</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-10')">10</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-11')">11</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-12')">12</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-13')">13</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-14')">14</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-15')">15</div></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-16')">16</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-17')">17</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-18')">18</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-19')">19</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-20')">20</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-21')">21</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-22')">22</div></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-23')">23</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-24')">24</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-25')">25</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-26')">26</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-27')">27</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-28')">28</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-29')">29</div></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-30')">30</div></td>    
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-31')">31</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Agrega más días aquí -->
+        </div>
+
+        <div id="event-container">
+            <div class="event-list" id="event-2023-10-26">
+                <h3>Eventos para el 26 de Octubre:</h3>
+                <ul>
+                    <li>Reunión de trabajo a las 10:00 AM</li>
+                    <li>Cita con el médico a las 3:30 PM</li>
+                </ul>
+            </div>
+            <div class="event-list" id="event-2023-10-27">
+                <h3>Eventos para el 27 de Octubre:</h3>
+                <ul>
+                    <li>Comprar víveres</li>
+                    <li>Día de series en Valencinas</li>
+                </ul>
+            </div>
+            <div class="event-list" id="event-2023-10-28">
+                <h3>Eventos para el 28 de Octubre:</h3>
+                <ul>
+                    <li>Ruta a Las Palomas 6:30 </li>
+                </ul>
+            </div>
+            <!-- Agrega más eventos aquí -->
+        </div>
+        <footer>
+            <p>Derechos de autor © 2023. FRAN DONA</p>
+        </footer>
+        <script>
+            function showEvent(date) {
+                // Oculta todos los eventos
+                var eventLists = document.querySelectorAll('.event-list');
+                for (var i = 0; i < eventLists.length; i++) {
+                    eventLists[i].style.display = 'none';
+                }
+
+                // Muestra el evento correspondiente al día clickeado
+                var eventId = 'event-' + date;
+                var eventElement = document.getElementById(eventId);
+                if (eventElement) {
+                    eventElement.style.display = 'block';
+                    
+                    // Desplázate al evento usando scrollIntoView
+                    eventElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        </script>
+    </body>
+</html>
