@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Plantillas RTFLAKITOS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #000000;
+            background: linear-gradient(
+            10deg,
+            rgb(242, 255, 192),
+            rgb(125, 113, 255),
+            rgb(237, 255, 158)
+            );
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            margin-left: 38px;
+            font-weight: bold;
+        }
+        footer p{
+            background-color: #0000007d;
+            color: #ffffff;
+            font-size: small;
+            text-align: center;
+            padding: 1px 0;
+            clear: both;
+        }
+
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #texto-generado {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 85%;
+        }
+
+        /* Estilo para el botón */
+        .boton-fijo {
+            position: fixed;
+            bottom: 30px; /* Puedes ajustar la posición vertical como prefieras */
+            right: 30px; /* Puedes ajustar la posición horizontal como prefieras */
+            z-index: 999; /* Asegura que el botón esté por encima del contenido */
+            padding: 20px 30px;
+            background-color: #212222bf; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 750px ) {
+            .boton-fijo {
+            font-size: 12px;
+            padding: 10px 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Generador de Plantillas</h1>
+    <h1>L@s Flaquit@s</h1><br>
+    
+    <form id="rtflakitos-form">
+        <label for="nombre">RTFLAKITOS:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Sabado 30" width="10px" required>
+        
+        <label for="ruta">Ruta a:</label>
+        <input type="text" id="ruta" name="ruta" placeholder="Ej. Sierra Norte" required>
+        
+        <label for="dia">Día:</label>
+        <input type="text" id="dia" name="fecha" placeholder="Ej. Lunes" required>
+        
+        <label for="hora-salida">Hora Salida:</label>
+        <input type="text" id="hora-salida" name="hora-salida" placeholder="Ej. 8:30" required>
+
+        <label for="equipacion">Color Maillot:</label>
+        <select id="equipacion" name="equipacion">
+            <option value="">&#129000; Amarilla</option>
+            <option value="">&#11036; Blanca</option>
+            <option value="">&#x1F308; Libre</option>
+        </select><br><br>
+        
+        <label for="telefono">Teléfono de Contacto:</label>
+        <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+        
+        <label for="lugar-quedada">Lugar de Quedada:</label>
+        <input type="text" id="lugar-quedada" name="lugar-quedada" placeholder="Cantillana 2 C. San Sebastián" required>
+        
+        <label for="mapa">Enlace al Mapa:</label>
+        <input type="text" id="mapa" name="mapa" placeholder="URL" required>
+        
+        <label for="hora-llegada">Hora Llegada:</label>
+        <input type="text" id="hora-llegada" name="hora-llegada" placeholder="Ej. 12:30" required>
+        
+        <label for="distancia">Distancia Kms aprox.:</label>
+        <input type="text" id="distancia" name="distancia" placeholder="Ej. 75km" required>
+        
+        <label for="desnivel">Desnivel positivo aprox.:</label>
+        <input type="text" id="desnivel" name="desnivel" placeholder="Ej. 1700m" required>
+        
+        <label for="velocidad">Vel. media aprox.:</label>
+        <input type="text" id="velocidad" name="velocidad" placeholder="20/25km/h" required>
+        
+        <label for="dificultad">Dificultad Técnica:</label>
+        <select id="dificultad" name="dificultad">
+            <option value="">&#128994; Fácil</option>
+            <option value="">&#128993; Intermedio</option>
+            <option value="">&#128992; Difícil</option>
+            <option value="">&#128308; Muy Difícil</option>
+            <option value="">&#9899; Muy Difícil</option>
+        </select><br><br>
+        
+        <label for="track">Track:</label>
+        <input type="text" id="track" name="track" placeholder="Si" required>
+        
+        <label for="terreno">Terreno:</label>
+        <input type="text" id="terreno" name="terreno" placeholder="Asfalto" required>
+        
+        <label for="observaciones">Tener en cuenta:</label>
+        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Salgo de sábado en sábado así que ya sabeis, kit kat por el camino" required></textarea>
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Cantillana, El Pedroso, Cazalla, Alanis, San Nicolás del Puerto, Constantina  Vva. Río y Minas,Cantillana" required></textarea>
+        
+        <label for="ciclistas">Ciclistas:</label>
+        <textarea id="ciclistas" name="ciclistas" rows="4" value="🚵" required>🚵
+🚵
+🚵
+🚵</textarea>
+
+        
+        
+    </form>
+    
+    <div id="texto-generado"></div>
+    <button type="button" id="generar-texto">Generar Texto</button>
+    <button style="background-color: green;" type="button" id="compartir-whatsapp">Compartir por WhatsApp</button>
+    <!-- Botón fijo -->
+    <button class="boton-fijo" onclick="redirectToRanking()">Volver</button>
+    <footer>
+        <p>Derechos de autor © 2023. FRAN DONA</p>
+    </footer>
+
+
+    <script>
+        document.getElementById("generar-texto").addEventListener("click", function() {
+            // Obtener el elemento select de dificultad técnica
+            const selectDificultad = document.getElementById("dificultad");
+            const selectEquipacion = document.getElementById("equipacion");
+
+            // Obtener la opción seleccionada
+            const opcionSeleccionada = selectDificultad.options[selectDificultad.selectedIndex];
+            const opcionSeleccionadaE = selectEquipacion.options[selectEquipacion.selectedIndex];
+
+            // Obtener el emoji y el texto de la opción seleccionada
+            const emojiDificultad = opcionSeleccionada.value;
+            const textoDificultad = opcionSeleccionada.textContent;
+
+            const emojiEquipacion = opcionSeleccionadaE.value;
+            const textoEquipacion = opcionSeleccionadaE.textContent;
+
+            // Resto de tu código para generar el texto
+            var textoGenerado = "*RTFLAKITOS* \n\n" +
+                                "Ruta a: *(" + document.getElementById("ruta").value + ")*\n" +
+                                "Día: *(" + document.getElementById("dia").value + ")*\n" +
+                                "Hora Salida: *(" + document.getElementById("hora-salida").value + ")*\n" +
+                                "Equipación: *(" + emojiEquipacion + " " + textoEquipacion + ")*\n" +
+                                "Teléfono de Contacto: *(" + document.getElementById("telefono").value + ")*\n" +
+                                "Lugar de Quedada: *(" + document.getElementById("lugar-quedada").value + ")*\n\n" +
+                                "Hora Llegada: *(" + document.getElementById("hora-llegada").value + ")*\n" +
+                                "Distancia Kms aprox.: *(" + document.getElementById("distancia").value + ")*\n" +
+                                "Desnivel positivo aprox.: *(" + document.getElementById("desnivel").value + ")*\n" +
+                                "Vel. media aprox: *(" + document.getElementById("velocidad").value + ")*\n" +
+                                "Dificultad Técnica: *(" + emojiDificultad + " " + textoDificultad + ")*\n" +
+                                "Track: *(" + document.getElementById("track").value + ")*\n" +
+                                "Terreno: *(" + document.getElementById("terreno").value + ")*\n\n" +
+                                "Tener en cuenta: *(" + document.getElementById("observaciones").value + ")*\n\n" +
+                                "Descripción: *(" + document.getElementById("descripcion").value + ")*\n\n" +
+                                "Cada uno es responsable de si mism@, SIN CASCO NO SE SALE.\n\n" +
+                                "Ciclistas:\n" + document.getElementById("ciclistas").value;
+
+            document.getElementById("texto-generado").textContent = textoGenerado;
+        });
+        
+        document.getElementById("compartir-whatsapp").addEventListener("click", function() {
+            var textoGenerado = document.getElementById("texto-generado").textContent;
+            var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(textoGenerado);
+            window.open(whatsappUrl, "_blank");
+        });
+
+        function redirectToRanking() {
+                window.location.href = '../index.html';
+                }
+    </script>
+</body>
+</html>

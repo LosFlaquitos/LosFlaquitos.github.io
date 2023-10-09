@@ -4,10 +4,11 @@ body {
     padding-left: 0%;
     padding-right: 0%;
     margin: 0;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 12px;
 }
 
 header {
@@ -15,22 +16,29 @@ header {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    font: 2em ;
 }
 
 footer p{
-    background-color: #0000007d;
-    color: #ffffff;
+    background-color: #33333392;
+    color: #fff;
     font-size: small;
     text-align: center;
     padding: 1px 0;
     clear: both;
-    
 }
 
-h1 {
-    text-align: center;
-    color: #ffffff;
+table {
+    font-size: medium;
+}
+
+tr {
+    vertical-align: middle; /* Alineación vertical al centro para todas las filas */
+}
+
+td {
+    height: 9px;
+    padding: 5px;
+    text-align: center; /* Alineación horizontal al centro */
 }
 
 nav {
@@ -38,6 +46,7 @@ nav {
     color: #fff;
     text-align: center;
     padding: 0px 0;
+    font-size: 16px;
 }
 
 nav ul {
@@ -86,47 +95,52 @@ nav a:hover, nav a:focus {
     color: #333;
 }
 
-.update
-    {
-        text-align: right;
-        margin-right: 20px;
-    }
-
-.boton-enlace {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 18px;
-    background-color: #007bff; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    font-size: 20px;
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 0px) {
+    nav li {
+        display: block;
+        margin: 10px 0;
+            }
 }
 
-/* Estilos cuando se coloca el cursor sobre el botón */
-.boton-enlace:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el cursor */
+.centrado {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-.contenido{
-    margin: auto;
-    margin-top: 40px;
+.tv {
+    transform: rotate(270deg); /* Rota el texto 270 grados (de abajo a arriba) */
+    white-space: nowrap;
+}
+
+.tvr {
+    transform: rotate(300deg); /* Rota el texto 270 grados (de abajo a arriba) */
+    white-space: nowrap;
+    font-size: small;
+}
+
+.tva {
+    width: 30px;
+}
+
+.mensaje {
+    display: none;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
-    font-size: 1.5em;
-    line-height: 1.4;
-    width: 450px; /* Ancho del div */
-    height: auto; /* Altura del div */
-    border: 2px solid #7577ff;/* Borde sólido de 2 píxeles de ancho y color negro */
-    border-radius: 10px;
-    background-color: #89a6ffa1;
-    text-align: justify;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .cssFont_1 {
     font-family: 'Pacifico', cursive;
-    font-size: 140px;
+    font-size: 50px;
     letter-spacing: 0px;
     word-spacing: 0px;
     color: #ffffff;
@@ -136,27 +150,4 @@ nav a:hover, nav a:focus {
     font-variant: normal;
     text-transform: none;
     }
-
-/*ZONA DE PRUEBAS*/
-
-.fondodepantalla {
-    /* Establece la imagen de fondo y asegúrate de que cubra todo el contenedor */
-    background-image: url('Media/fondo.jpg');
-    background-size: cover;
-    /* Ajusta la imagen para que no se repita */
-    background-repeat: no-repeat;
-    /* Centra la imagen vertical y horizontalmente */
-    background-position: center center;
-    /* Establece una altura mínima para que el contenido sea visible en pantallas pequeñas */
-}
-
-/* Ajuste para moviles */
-@media screen and (max-width: 750px ) {
-    .contenido{
-        width: 350px; /* Ancho del div */
-        height: auto; /* Altura del div */
-    }
-    .boton-enlace {
-        font-size: 15px
-    }
-}
+    

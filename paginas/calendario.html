@@ -2,15 +2,19 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <meta name="author" content="Fran Dona">
         <title>L@s Flaquit@s - Calendario</title>
         <link rel="stylesheet" type="text/css" href="csspaginas/calendariocss.css">
         <link rel="icon" href="../Media/Logo_render.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     </head>
     <body class="fondodepantalla">
         <header>
-            <h1>Calendario</h1>
+            <div class="cssFont_1" style="font-size:50px ; font-family:'Pacifico', cursive">Calendario</div>
         </header>
         <nav>
             <ul>
@@ -48,16 +52,16 @@
                     </tr>
                     <tr>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-2')">2</div></td>
-                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-3')">3</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-3')">3</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-4')">4</div></td>
-                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-5')">5</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-5')">5</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-6')">6</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-7')">7</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-8')">8</div></td>
                     </tr>
                     <tr>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-9')">9</div></td>
-                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-10')">10</div></td>
+                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-10')">10</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-11')">11</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-12')">12</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-13')">13</div></td>
@@ -78,8 +82,8 @@
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-24')">24</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-25')">25</div></td>
                         <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-26')">26</div></td>
-                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-27')">27</div></td>
-                        <td style="text-align: center;"><div class="diaR" onclick="showEvent('2023-10-28')">28</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-27')">27</div></td>
+                        <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-28')">28</div></td>
                         <td style="text-align: center;"><div class="dia" onclick="showEvent('2023-10-29')">29</div></td>
                     </tr>
                     <tr>
@@ -92,24 +96,29 @@
         </div>
 
         <div id="event-container">
+            <div class="event-list" id="event-2023-10-3">
+                <h3>Eventos para el 3 de Octubre:</h3>
+                <ul>
+                    <li>Salida 9:00 con CVG</li>
+                    <li>Salida 15:00 Pajanosas</li>
+                </ul>
+            </div>
+            <div class="event-list" id="event-2023-10-10">
+                <h3>Eventos para el 10 de Octubre:</h3>
+                <ul>
+                    <li>Salida 7:30 Olivares</li>
+                </ul>
+            </div>
+            <div class="event-list" id="event-2023-10-5">
+                <h3>Eventos para el 5 de Octubre:</h3>
+                <ul>
+                    <li>Ruta a Las Palomas 6:30 </li>
+                </ul>
+            </div>
             <div class="event-list" id="event-2023-10-26">
                 <h3>Eventos para el 26 de Octubre:</h3>
                 <ul>
-                    <li>Reunión de trabajo a las 10:00 AM</li>
-                    <li>Cita con el médico a las 3:30 PM</li>
-                </ul>
-            </div>
-            <div class="event-list" id="event-2023-10-27">
-                <h3>Eventos para el 27 de Octubre:</h3>
-                <ul>
-                    <li>Comprar víveres</li>
-                    <li>Día de series en Valencinas</li>
-                </ul>
-            </div>
-            <div class="event-list" id="event-2023-10-28">
-                <h3>Eventos para el 28 de Octubre:</h3>
-                <ul>
-                    <li>Ruta a Las Palomas 6:30 </li>
+                    <li>Salida 10:00 al Ronquillo</li>
                 </ul>
             </div>
             <!-- Agrega más eventos aquí -->
