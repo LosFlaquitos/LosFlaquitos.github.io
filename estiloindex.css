@@ -86,29 +86,56 @@ nav a:hover, nav a:focus {
     color: #333;
 }
 
+.update
+    {
+        text-align: right;
+        margin-right: 20px;
+    }
+
+.boton-enlace {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 18px;
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    font-size: 20px;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Estilos cuando se coloca el cursor sobre el botón */
+.boton-enlace:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el cursor */
+}
+
 .contenido{
     margin: auto;
     margin-top: 40px;
     padding: 10px;
     font-size: 1.5em;
     line-height: 1.4;
-    width: 350px; /* Ancho del div */
+    width: 450px; /* Ancho del div */
     height: auto; /* Altura del div */
     border: 2px solid #7577ff;/* Borde sólido de 2 píxeles de ancho y color negro */
     border-radius: 10px;
-    background-color: #89a7ff6d;
+    background-color: #89a6ffa1;
     text-align: justify;
-
 }
 
-/* Ajuste para moviles */
-@media screen and (max-width: 0px ) {
-nav li {
-    display: block;
-    margin: 10px 0;
-        }
-}
-
+.cssFont_1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 140px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #ffffff;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    }
 
 /*ZONA DE PRUEBAS*/
 
@@ -121,4 +148,15 @@ nav li {
     /* Centra la imagen vertical y horizontalmente */
     background-position: center center;
     /* Establece una altura mínima para que el contenido sea visible en pantallas pequeñas */
+}
+
+/* Ajuste para moviles */
+@media screen and (max-width: 750px ) {
+    .contenido{
+        width: 350px; /* Ancho del div */
+        height: auto; /* Altura del div */
+    }
+    .boton-enlace {
+        font-size: 15px
+    }
 }

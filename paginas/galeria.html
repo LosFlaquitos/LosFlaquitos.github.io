@@ -1,108 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Fran Dona">
-        <title>L@s Flaquit@s - Galeria</title>
-        <link rel="stylesheet" type="text/css" href="csspaginas/estilopaginas.css">
-        <link rel="icon" href="../Media/Logo_render.ico">
-        <style>
-                /* Estilos para el carrusel */
-    .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fran Dona">
+    <title>L@s Flaquit@s - Galeria</title>
+    <link rel="icon" href="../Media/Logo_render.ico">
+    <link rel="stylesheet" type="text/css" href="csspaginas/cssgaleria.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+</head>
+<body>
+    <header>
+        <div class="cssFont_1" style="font-family:'Pacifico', cursive">Galeria</div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="calendario.html">Calendario</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Galería</a></li>
+        </ul>
+    </nav>
+<div class="container ">
+    <h2 class="text-center">L@s Flaquit@s</h2>
+    <div class="lightbox-gallery">
+</script>
+        <div><img src="mediapaginas/galeria/img1.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img1.jpg"></div>
+        <div><img src="mediapaginas/galeria/img2.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img2.jpg"></div>
+        <div><img src="mediapaginas/galeria/img3.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img3.jpg"></div>
+        <div><img src="mediapaginas/galeria/img4.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img4.jpg"></div>
+        <div><img src="mediapaginas/galeria/img5.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img5.jpg"></div>
+        <div><img src="mediapaginas/galeria/img6.jpg" alt="foto"  data-image-hd="mediapaginas/galeria/img6.jpg"></div>
 
-    .carousel-slide {
-    display: flex;
-    transition: transform 0.3s ease;
-    }
+    </div>
+</div>
+<footer>
+    <p>Derechos de autor © 2023. FRAN DONA</p>
+</footer>
+    <script>
+        (function() {
+            var $fullscreenImage = $("<div class='fullscreen-image'></div>");
+            var $img = $("<img>");
+            var $downloadButton = $("<a class='download-button' download><i class='fa fa-download'></i> Descargar</a>");
 
-    .carousel-image {
-    width: 100%;
-    height: auto;
-    }
+            // Add elements to fullscreen container
+            $fullscreenImage.append($img).append($downloadButton);
 
-    /* Botones de navegación */
-    .carousel-button {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    }
+            // Add fullscreen container to document
+            $('body').append($fullscreenImage);
 
-    .prev {
-    left: 0;
-    }
+            // Initialize Masonry.js
+            var $gallery = $('.lightbox-gallery').masonry({
+                itemSelector: '.lightbox-gallery div',
+                columnWidth: '.lightbox-gallery div',
+                gutter: 10, // Espacio entre las imágenes
+                fitWidth: true // Ajustar automáticamente al ancho del contenedor
+            });
 
-    .next {
-    right: 0;
-    }
-        </style>
+            // Show lightbox on image click
+            $('.lightbox-gallery img').click(function(e) {
+                e.preventDefault();
 
-    </head>
-    <body class="background-container">
-        <header>
-            <h1>Galeria</h1>
-        </header>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
-                    <li><a href="calendario.html">Calendario</a></li>
-                    <li><a href="rutas.html">Rutas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="#">Galería</a></li>
-                </ul>
-            </nav>
-            <div class="contenido">
-                <h2>¡Bienvenido a nuestro sitio web!</h2>
-                <p><p>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                <img class="carousel-image" src="mediapaginas/galeria/img2.jpeg" alt="Imagen 3">
-                <img class="carousel-image" src="mediapaginas/galeria/img3.jpeg" alt="Imagen 3">
-                <img class="carousel-image" src="mediapaginas/galeria/img4.jpeg" alt="Imagen 3">
-                </div>
-                <div class="carousel-button prev" onclick="prevSlide()">Anterior</div>
-                <div class="carousel-button next" onclick="nextSlide()">Siguiente</div>
-            </div>
-        <footer>
-            <p>Derechos de autor © 2023. FRAN DONA</p>
-        </footer>
-        <script>
-            let slideIndex = 0;
-            const slides = document.querySelectorAll('.carousel-image');
-        
-            function showSlide(index) {
-            if (index < 0) {
-                slideIndex = slides.length - 1;
-            } else if (index >= slides.length) {
-                slideIndex = 0;
-            }
-        
-              const translateXValue = -slideIndex * 100 + '%';
-            document.querySelector('.carousel-slide').style.transform = `translateX(${translateXValue})`;
-            }
-        
-            function prevSlide() {
-            slideIndex--;
-            showSlide(slideIndex);
-            }
-        
-            function nextSlide() {
-            slideIndex++;
-            showSlide(slideIndex);
-            }
-        
-            // Mostrar el primer slide al cargar la página
-            showSlide(slideIndex);
-        </script>
-    </body>
+                // Get image source and alt text
+                var src = $(this).attr("src");
+                var alt = $(this).attr("alt");
+
+                // Set the clicked image as the source for the fullscreen container
+                $img.attr('src', src).attr('alt', alt);
+
+                // Add download link to the image
+                $downloadButton.attr('href', src);
+
+                // Show fullscreen image
+                $fullscreenImage.fadeIn('fast');
+            });
+
+            // Click anywhere on the fullscreen image to close it
+            $fullscreenImage.click(function() {
+                $fullscreenImage.fadeOut('fast');
+            });
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+</body>
 </html>

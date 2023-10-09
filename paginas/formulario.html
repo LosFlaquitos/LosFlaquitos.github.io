@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Texto RTFLAKITOS</title>
+    <title>Generador de Plantillas RTFLAKITOS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             max-width: 500px;
             margin: 0 auto;
+            background-color: #000000;
+            background: linear-gradient(
+            10deg,
+            rgb(242, 255, 192),
+            rgb(125, 113, 255),
+            rgb(237, 255, 158)
+            );
         }
         h1 {
             text-align: center;
@@ -17,6 +24,7 @@
         form {
             margin-top: 20px;
             margin-left: 38px;
+            font-weight: bold;
         }
         footer p{
             background-color: #0000007d;
@@ -52,10 +60,33 @@
         input, textarea {
             width: 85%;
         }
+
+        /* Estilo para el botón */
+        .boton-fijo {
+            position: fixed;
+            bottom: 30px; /* Puedes ajustar la posición vertical como prefieras */
+            right: 30px; /* Puedes ajustar la posición horizontal como prefieras */
+            z-index: 999; /* Asegura que el botón esté por encima del contenido */
+            padding: 20px 30px;
+            background-color: #212222bf; /* Color de fondo del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 750px ) {
+            .boton-fijo {
+            font-size: 12px;
+            padding: 10px 15px;
+        }
+    }
     </style>
 </head>
 <body>
-    <h1>Generador de Texto RTFLAKITOS</h1>
+    <h1>Generador de Plantillas</h1>
+    <h1>L@s Flaquit@s</h1><br>
     
     <form id="rtflakitos-form">
         <label for="nombre">RTFLAKITOS:</label>
@@ -69,6 +100,13 @@
         
         <label for="hora-salida">Hora Salida:</label>
         <input type="text" id="hora-salida" name="hora-salida" placeholder="Ej. 8:30" required>
+
+        <label for="equipacion">Color Maillot:</label>
+        <select id="equipacion" name="equipacion">
+            <option value="">&#129000; Amarilla</option>
+            <option value="">&#11036; Blanca</option>
+            <option value="">&#x1F308; Libre</option>
+        </select><br><br>
         
         <label for="telefono">Teléfono de Contacto:</label>
         <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono" required>
@@ -124,39 +162,48 @@
     
     <div id="texto-generado"></div>
     <button type="button" id="generar-texto">Generar Texto</button>
-    
     <button style="background-color: green;" type="button" id="compartir-whatsapp">Compartir por WhatsApp</button>
+    <!-- Botón fijo -->
+    <button class="boton-fijo" onclick="redirectToRanking()">Volver</button>
     <footer>
         <p>Derechos de autor © 2023. FRAN DONA</p>
     </footer>
+
+
     <script>
         document.getElementById("generar-texto").addEventListener("click", function() {
             // Obtener el elemento select de dificultad técnica
             const selectDificultad = document.getElementById("dificultad");
+            const selectEquipacion = document.getElementById("equipacion");
 
             // Obtener la opción seleccionada
             const opcionSeleccionada = selectDificultad.options[selectDificultad.selectedIndex];
+            const opcionSeleccionadaE = selectEquipacion.options[selectEquipacion.selectedIndex];
 
             // Obtener el emoji y el texto de la opción seleccionada
             const emojiDificultad = opcionSeleccionada.value;
             const textoDificultad = opcionSeleccionada.textContent;
 
+            const emojiEquipacion = opcionSeleccionadaE.value;
+            const textoEquipacion = opcionSeleccionadaE.textContent;
+
             // Resto de tu código para generar el texto
-            var textoGenerado = "RTFLAKITOS (" + document.getElementById("nombre").value + ")\n\n" +
-                                "Ruta a: (" + document.getElementById("ruta").value + ")\n" +
-                                "Día: (" + document.getElementById("dia").value + ")\n" +
-                                "Hora Salida: (" + document.getElementById("hora-salida").value + ")\n" +
-                                "Teléfono de Contacto: (" + document.getElementById("telefono").value + ")\n" +
-                                "Lugar de Quedada: (" + document.getElementById("lugar-quedada").value + ")\n\n" +
-                                "Hora Llegada: (" + document.getElementById("hora-llegada").value + ")\n" +
-                                "Distancia Kms aprox.: (" + document.getElementById("distancia").value + ")\n" +
-                                "Desnivel positivo aprox.: (" + document.getElementById("desnivel").value + ")\n" +
-                                "Vel. media aprox: (" + document.getElementById("velocidad").value + ")\n" +
-                                "Dificultad Técnica: (" + emojiDificultad + " " + textoDificultad + ")\n" +
-                                "Track: (" + document.getElementById("track").value + ")\n" +
-                                "Terreno: (" + document.getElementById("terreno").value + ")\n\n" +
-                                "Tener en cuenta: (" + document.getElementById("observaciones").value + ")\n\n" +
-                                "Descripción: (" + document.getElementById("descripcion").value + ")\n\n" +
+            var textoGenerado = "*RTFLAKITOS* \n\n" +
+                                "Ruta a: *(" + document.getElementById("ruta").value + ")*\n" +
+                                "Día: *(" + document.getElementById("dia").value + ")*\n" +
+                                "Hora Salida: *(" + document.getElementById("hora-salida").value + ")*\n" +
+                                "Equipación: *(" + emojiEquipacion + " " + textoEquipacion + ")*\n" +
+                                "Teléfono de Contacto: *(" + document.getElementById("telefono").value + ")*\n" +
+                                "Lugar de Quedada: *(" + document.getElementById("lugar-quedada").value + ")*\n\n" +
+                                "Hora Llegada: *(" + document.getElementById("hora-llegada").value + ")*\n" +
+                                "Distancia Kms aprox.: *(" + document.getElementById("distancia").value + ")*\n" +
+                                "Desnivel positivo aprox.: *(" + document.getElementById("desnivel").value + ")*\n" +
+                                "Vel. media aprox: *(" + document.getElementById("velocidad").value + ")*\n" +
+                                "Dificultad Técnica: *(" + emojiDificultad + " " + textoDificultad + ")*\n" +
+                                "Track: *(" + document.getElementById("track").value + ")*\n" +
+                                "Terreno: *(" + document.getElementById("terreno").value + ")*\n\n" +
+                                "Tener en cuenta: *(" + document.getElementById("observaciones").value + ")*\n\n" +
+                                "Descripción: *(" + document.getElementById("descripcion").value + ")*\n\n" +
                                 "Cada uno es responsable de si mism@, SIN CASCO NO SE SALE.\n\n" +
                                 "Ciclistas:\n" + document.getElementById("ciclistas").value;
 
@@ -168,6 +215,10 @@
             var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(textoGenerado);
             window.open(whatsappUrl, "_blank");
         });
+
+        function redirectToRanking() {
+                window.location.href = '../index.html';
+                }
     </script>
 </body>
 </html>
