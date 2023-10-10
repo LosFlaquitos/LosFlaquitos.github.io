@@ -197,15 +197,15 @@
                                 "Lugar de Quedada: *" + document.getElementById("lugar-quedada").value.trim() + "*\n\n" +
                                 "Hora Llegada: *" + document.getElementById("hora-llegada").value.trim() + "*\n" +
                                 "Distancia Kms aprox.: *" + document.getElementById("distancia").value.trim() + "*\n" +
-                                "Desnivel positivo aprox.: *" + document.getElementById("desnivel").value + "*\n" +
-                                "Vel. media aprox: *" + document.getElementById("velocidad").value + "*\n" +
+                                "Desnivel positivo aprox.: *" + document.getElementById("desnivel").value.trim() + "*\n" +
+                                "Vel. media aprox: *" + document.getElementById("velocidad").value.trim() + "*\n" +
                                 "Dificultad Técnica: " + emojiDificultad + " *" + textoDificultad + "*\n" +
-                                "Track: *" + document.getElementById("track").value + "*\n" +
-                                "Terreno: *" + document.getElementById("terreno").value + "*\n\n" +
-                                "Tener en cuenta: *" + document.getElementById("observaciones").value + "*\n\n" +
-                                "Descripción: *" + document.getElementById("descripcion").value.trim()+ "*\n\n" +
+                                "Track: *" + document.getElementById("track").value.trim() + "*\n" +
+                                "Terreno: *" + document.getElementById("terreno").value.trim() + "*\n\n" +
+                                "Tener en cuenta: *" + document.getElementById("observaciones").value.trim() + "*\n\n" +
+                                "Descripción: *" + document.getElementById("descripcion").value.trim().trim()+ "*\n\n" +
                                 "Cada uno es responsable de si mism@, SIN CASCO NO SE SALE.\n\n" +
-                                "Ciclistas:\n" + document.getElementById("ciclistas").value;
+                                "Ciclistas:\n" + document.getElementById("ciclistas").value.trim();
 
             document.getElementById("texto-generado").textContent = textoGenerado;
         });
