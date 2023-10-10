@@ -189,9 +189,9 @@
 
             // Resto de tu código para generar el texto
             var textoGenerado = "*RTFLAKITOS* \n\n" +
-                                "Ruta a: *" + document.getElementById("ruta").value + "*\n" +
-                                "Día: *" + document.getElementById("dia").value + "*\n" +
-                                "Hora Salida: *" + document.getElementById("hora-salida").value + "*\n" +
+                                "Ruta a: *" + document.getElementById("ruta").value.trim() + "*\n" +
+                                "Día: *" + document.getElementById("dia").value.trim() + "*\n" +
+                                "Hora Salida: *" + document.getElementById("hora-salida").value.trim() + "*\n" +
                                 "Equipación: " + emojiEquipacion + " *" + textoEquipacion + "*\n" +
                                 "Teléfono de Contacto: *" + document.getElementById("telefono").value + "*\n" +
                                 "Lugar de Quedada: *" + document.getElementById("lugar-quedada").value + "*\n\n" +
@@ -203,7 +203,7 @@
                                 "Track: *" + document.getElementById("track").value + "*\n" +
                                 "Terreno: *" + document.getElementById("terreno").value + "*\n\n" +
                                 "Tener en cuenta: *" + document.getElementById("observaciones").value + "*\n\n" +
-                                "Descripción: *" + document.getElementById("descripcion").value + "*\n\n" +
+                                "Descripción: *" + document.getElementById("descripcion").value.trim()+ "*\n\n" +
                                 "Cada uno es responsable de si mism@, SIN CASCO NO SE SALE.\n\n" +
                                 "Ciclistas:\n" + document.getElementById("ciclistas").value;
 
