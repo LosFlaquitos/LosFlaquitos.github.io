@@ -90,7 +90,6 @@
     
     <form id="rtflakitos-form">
         <label for="nombre">LOS FLAKITOS:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej. Sabado 30" width="10px" required>
         
         <label for="ruta">Ruta a:</label>
         <input type="text" id="ruta" name="ruta" placeholder="Ej. Sierra Norte" required>
@@ -188,7 +187,7 @@
             const textoEquipacion = opcionSeleccionadaE.textContent;
 
             // Resto de tu código para generar el texto
-            var textoGenerado = "          *LOS FLAKITOS* *" + document.getElementById("nombre").value.trim() + "*\n\n" +
+            var textoGenerado = "          *LOS FLAKITOS*" + "\n\n" +
                                 "Ruta a: *" + document.getElementById("ruta").value.trim() + "*\n" +
                                 "Día: *" + document.getElementById("dia").value.trim() + "*\n" +
                                 "Hora Salida: *" + document.getElementById("hora-salida").value.trim() + "*\n" +
