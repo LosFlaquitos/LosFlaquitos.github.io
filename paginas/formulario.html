@@ -161,7 +161,7 @@
     </form>
     
     <div id="texto-generado"></div>
-    <button type="button" id="generar-texto">Generar Texto</button>
+    <button type="button" id="generar-texto">Generar Plantilla</button>
     <button style="background-color: green;" type="button" id="compartir-whatsapp">Compartir por WhatsApp</button>
     <!-- Botón fijo -->
     <button class="boton-fijo" onclick="redirectToRanking()">Volver</button>
@@ -219,6 +219,27 @@
         function redirectToRanking() {
                 window.location.href = '../index.html';
                 }
+
+
+                  // Obtener el elemento del campo de texto
+const campoDeDescripcion = document.getElementById("descripcion");
+const campoDeObservaciones = document.getElementById("observaciones");
+
+// Escuchar el evento "keydown" en el campo de texto
+campoDeDescripcion.addEventListener("keydown", function(event) {
+
+  // Verificar si se presionó la tecla "Enter" (código 13)
+if (event.keyCode === 13) {
+    // Prevenir el comportamiento predeterminado de la tecla "Enter" (salto de línea)
+    event.preventDefault();
+}
+});
+
+campoDeObservaciones.addEventListener("keydown", function(event) {
+if (event.keyCode === 13) {
+event.preventDefault();
+}
+});
     </script>
 </body>
 </html>
