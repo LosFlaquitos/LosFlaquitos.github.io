@@ -89,7 +89,7 @@
     <h1>L@s Flakit@s</h1><br>
     
     <form id="rtflakitos-form">
-        <label for="nombre">RTFLAKITOS:</label>
+        <label for="nombre">LOS FLAKITOS:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Ej. Sabado 30" width="10px" required>
         
         <label for="ruta">Ruta a:</label>
@@ -139,10 +139,10 @@
         </select><br><br>
         
         <label for="track">Track:</label>
-        <input type="text" id="track" name="track" placeholder="Si" required>
+        <input type="text" id="track" name="track" value="No" required>
         
         <label for="terreno">Terreno:</label>
-        <input type="text" id="terreno" name="terreno" placeholder="Asfalto" required>
+        <input type="text" id="terreno" name="terreno" value="Asfalto" required>
         
         <label for="observaciones">Tener en cuenta:</label>
         <textarea id="observaciones" name="observaciones" rows="4" placeholder="(Datos importantes para aclarar a los asistentes)" required></textarea>
@@ -188,7 +188,7 @@
             const textoEquipacion = opcionSeleccionadaE.textContent;
 
             // Resto de tu código para generar el texto
-            var textoGenerado = "          *RTFLAKITOS* \n\n" +
+            var textoGenerado = "          *LOS FLAKITOS* *" + document.getElementById("nombre").value.trim() + "*\n\n" +
                                 "Ruta a: *" + document.getElementById("ruta").value.trim() + "*\n" +
                                 "Día: *" + document.getElementById("dia").value.trim() + "*\n" +
                                 "Hora Salida: *" + document.getElementById("hora-salida").value.trim() + "*\n" +
