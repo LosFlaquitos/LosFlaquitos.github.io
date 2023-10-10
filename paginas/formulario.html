@@ -239,6 +239,28 @@ if (event.keyCode === 13) {
 event.preventDefault();
 }
 });
+
+document.getElementById("generar-texto").addEventListener("click", function() {
+    // Obtener los valores de los campos requeridos
+    const ruta = document.getElementById("ruta").value.trim();
+    const dia = document.getElementById("dia").value.trim();
+    const horaSalida = document.getElementById("hora-salida").value.trim();
+    const lugarQuedada = document.getElementById("lugar-quedada").value.trim();
+    const distancia = document.getElementById("distancia").value.trim();
+
+    // Verificar si los campos requeridos están completos
+    if (ruta === "" || dia === "" || horaSalida === "" || lugarQuedada === "" || distancia === "") {
+        alert("Por favor, complete todos los campos requeridos.");
+        return; // Evitar la generación de la plantilla si faltan campos requeridos
+    }
+
+    // Resto de tu código para generar el texto
+    // ...
+
+    // Generar y mostrar la plantilla
+    document.getElementById("texto-generado").textContent = textoGenerado;
+});
+
     </script>
 </body>
 </html>
