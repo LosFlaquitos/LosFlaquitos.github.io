@@ -188,15 +188,15 @@
             const textoEquipacion = opcionSeleccionadaE.textContent;
 
             // Resto de tu código para generar el texto
-            var textoGenerado = "*RTFLAKITOS* \n\n" +
-                                "Ruta a: *" + document.getElementById("ruta").value.trim(ruta) + "*\n" +
+            var textoGenerado = "\n\n\n\n\n\n *RTFLAKITOS* \n\n" +
+                                "Ruta a: *" + document.getElementById("ruta").value.trim() + "*\n" +
                                 "Día: *" + document.getElementById("dia").value.trim() + "*\n" +
                                 "Hora Salida: *" + document.getElementById("hora-salida").value.trim() + "*\n" +
                                 "Equipación: " + emojiEquipacion + " *" + textoEquipacion + "*\n" +
-                                "Teléfono de Contacto: *" + document.getElementById("telefono").value + "*\n" +
-                                "Lugar de Quedada: *" + document.getElementById("lugar-quedada").value + "*\n\n" +
-                                "Hora Llegada: *" + document.getElementById("hora-llegada").value + "*\n" +
-                                "Distancia Kms aprox.: *" + document.getElementById("distancia").value + "*\n" +
+                                "Teléfono de Contacto: *" + document.getElementById("telefono").value.trim() + "*\n" +
+                                "Lugar de Quedada: *" + document.getElementById("lugar-quedada").value.trim() + "*\n\n" +
+                                "Hora Llegada: *" + document.getElementById("hora-llegada").value.trim() + "*\n" +
+                                "Distancia Kms aprox.: *" + document.getElementById("distancia").value.trim() + "*\n" +
                                 "Desnivel positivo aprox.: *" + document.getElementById("desnivel").value + "*\n" +
                                 "Vel. media aprox: *" + document.getElementById("velocidad").value + "*\n" +
                                 "Dificultad Técnica: " + emojiDificultad + " *" + textoDificultad + "*\n" +
