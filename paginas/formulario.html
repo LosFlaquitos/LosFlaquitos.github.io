@@ -87,17 +87,17 @@
 <body>
     <h1>Generador de Plantillas</h1>
     <h1>L@s Flakit@s</h1><br>
-    
+    <p>Los campos marcados con una * son obligatorios</p>
     <form id="rtflakitos-form">
         <label for="nombre">LOS FLAKITOS:</label>
         
-        <label for="ruta">Ruta a:</label>
+        <label for="ruta">*Ruta a:</label>
         <input type="text" id="ruta" name="ruta" placeholder="Ej. Sierra Norte" required>
         
-        <label for="dia">Día:</label>
+        <label for="dia">*Día:</label>
         <input type="text" id="dia" name="fecha" placeholder="Ej. Lunes" required>
         
-        <label for="hora-salida">Hora Salida:</label>
+        <label for="hora-salida">*Hora Salida:</label>
         <input type="text" id="hora-salida" name="hora-salida" placeholder="Ej. 8:30" required>
 
         <label for="equipacion">Color Maillot:</label>
@@ -110,7 +110,7 @@
         <label for="telefono">Teléfono de Contacto:</label>
         <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono" required>
         
-        <label for="lugar-quedada">Lugar de Quedada:</label>
+        <label for="lugar-quedada">*Lugar de Quedada:</label>
         <input type="text" id="lugar-quedada" name="lugar-quedada" placeholder="Cantillana 2 C. San Sebastián" required>
         
         <label for="mapa">Enlace al Mapa:</label>
@@ -119,7 +119,7 @@
         <label for="hora-llegada">Hora Llegada:</label>
         <input type="text" id="hora-llegada" name="hora-llegada" placeholder="Ej. 12:30" required>
         
-        <label for="distancia">Distancia Kms aprox.:</label>
+        <label for="distancia">*Distancia Kms aprox.:</label>
         <input type="text" id="distancia" name="distancia" placeholder="Ej. 75km" required>
         
         <label for="desnivel">Desnivel positivo aprox.:</label>
@@ -245,7 +245,7 @@ document.getElementById("generar-texto").addEventListener("click", function() {
 
     // Generar y mostrar la plantilla
     document.getElementById("texto-generado").textContent = textoGenerado;
-});
+    });
 
     </script>
 </body>
