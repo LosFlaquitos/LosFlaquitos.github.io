@@ -171,82 +171,73 @@
 
     <script>
         document.getElementById("generar-texto").addEventListener("click", function() {
+            // Obtener los valores de los campos requeridos
+            const ruta = document.getElementById("ruta").value.trim();
+            const dia = document.getElementById("dia").value.trim();
+            const horaSalida = document.getElementById("hora-salida").value.trim();
+            const lugarQuedada = document.getElementById("lugar-quedada").value.trim();
+            const distancia = document.getElementById("distancia").value.trim();
+    
+            // Verificar si los campos requeridos están completos
+            if (ruta === "" || dia === "" || horaSalida === "" || lugarQuedada === "" || distancia === "") {
+                alert("Todavía quedan datos obligatorios sin completar.");
+                return; // Evitar la generación de la plantilla si faltan campos requeridos
+            }
+    
             // Obtener el elemento select de dificultad técnica
             const selectDificultad = document.getElementById("dificultad");
             const selectEquipacion = document.getElementById("equipacion");
-
+    
             // Obtener la opción seleccionada
             const opcionSeleccionada = selectDificultad.options[selectDificultad.selectedIndex];
             const opcionSeleccionadaE = selectEquipacion.options[selectEquipacion.selectedIndex];
-
+    
             // Obtener el emoji y el texto de la opción seleccionada
             const emojiDificultad = opcionSeleccionada.value;
             const textoDificultad = opcionSeleccionada.textContent;
-
+    
             const emojiEquipacion = opcionSeleccionadaE.value;
             const textoEquipacion = opcionSeleccionadaE.textContent;
-
+    
             // Resto de tu código para generar el texto
             var textoGenerado = "          *LOS FLAKITOS*" + "\n\n" +
-                                "Ruta a: *" + document.getElementById("ruta").value.trim() + "*\n" +
-                                "Día: *" + document.getElementById("dia").value.trim() + "*\n" +
-                                "Hora Salida: *" + document.getElementById("hora-salida").value.trim() + "*\n" +
+                                "Ruta a: *" + ruta + "*\n" +
+                                "Día: *" + dia + "*\n" +
+                                "Hora Salida: *" + horaSalida + "*\n" +
                                 "Equipación: " + emojiEquipacion + " *" + textoEquipacion + "*\n" +
                                 "Teléfono de Contacto: *" + document.getElementById("telefono").value.trim() + "*\n" +
-                                "Lugar de Quedada: *" + document.getElementById("lugar-quedada").value.trim() + "*\n\n" +
+                                "Lugar de Quedada: *" + lugarQuedada + "*\n\n" +
                                 "Hora Llegada: *" + document.getElementById("hora-llegada").value.trim() + "*\n" +
-                                "Distancia Kms aprox.: *" + document.getElementById("distancia").value.trim() + "*\n" +
+                                "Distancia Kms aprox.: *" + distancia + "*\n" +
                                 "Desnivel positivo aprox.: *" + document.getElementById("desnivel").value.trim() + "*\n" +
                                 "Vel. media aprox: *" + document.getElementById("velocidad").value.trim() + "*\n" +
                                 "Dificultad Técnica: " + emojiDificultad + " *" + textoDificultad + "*\n" +
                                 "Track: *" + document.getElementById("track").value.trim() + "*\n" +
                                 "Terreno: *" + document.getElementById("terreno").value.trim() + "*\n\n" +
                                 "Tener en cuenta: *" + document.getElementById("observaciones").value.trim() + "*\n\n" +
-                                "Descripción: *" + document.getElementById("descripcion").value.trim().trim()+ "*\n\n" +
+                                "Descripción: *" + document.getElementById("descripcion").value.trim() + "*\n\n" +
                                 "Cada uno es responsable de si mism@, SIN CASCO NO SE SALE.\n\n" +
                                 "Ciclistas:\n" + document.getElementById("ciclistas").value.trim();
-
+    
             document.getElementById("texto-generado").textContent = textoGenerado;
         });
-        
+    
         document.getElementById("compartir-whatsapp").addEventListener("click", function() {
             var textoGenerado = document.getElementById("texto-generado").textContent;
             var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(textoGenerado);
             window.open(whatsappUrl, "_blank");
         });
-
+    
         function redirectToRanking() {
-                window.location.href = '../index.html';
-                }
-
-
-campoDeObservaciones.addEventListener("keydown", function(event) {
-if (event.keyCode === 13) {
-event.preventDefault();
-}
-});
-
-document.getElementById("generar-texto").addEventListener("click", function() {
-    // Obtener los valores de los campos requeridos
-    const ruta = document.getElementById("ruta").value.trim();
-    const dia = document.getElementById("dia").value.trim();
-    const horaSalida = document.getElementById("hora-salida").value.trim();
-    const lugarQuedada = document.getElementById("lugar-quedada").value.trim();
-    const distancia = document.getElementById("distancia").value.trim();
-
-    // Verificar si los campos requeridos están completos
-    if (ruta === "" || dia === "" || horaSalida === "" || lugarQuedada === "" || distancia === "") {
-        alert("Todavía quedan datos obligatorios sin completar.");
-        return; // Evitar la generación de la plantilla si faltan campos requeridos
-    }
-
-    // Resto de tu código para generar el texto
-    // ...
-
-    // Generar y mostrar la plantilla
-    document.getElementById("texto-generado").textContent = textoGenerado;
-    });
-
+            window.location.href = '../index.html';
+        }
+    
+        campoDeObservaciones.addEventListener("keydown", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
     </script>
+    
 </body>
 </html>
